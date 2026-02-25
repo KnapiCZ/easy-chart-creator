@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import ColorPicker from './ColorPicker';
 import './EditableTable.css';
 
 const EditableTable = ({ data, onUpdate, seriesColors, onColorChange }) => {
+  const { t } = useTranslation();
   const [tableData, setTableData] = useState(data);
 
   useEffect(() => {
@@ -60,7 +62,7 @@ const EditableTable = ({ data, onUpdate, seriesColors, onColorChange }) => {
   };
 
   const addColumn = () => {
-    const newColName = prompt("Enter new column name:");
+    const newColName = prompt(t('enter_new_column_name'));
     if (newColName && !columns.includes(newColName)) {
       const newData = tableData.map(row => ({ ...row, [newColName]: '' }));
       setTableData(newData);
@@ -82,8 +84,8 @@ const EditableTable = ({ data, onUpdate, seriesColors, onColorChange }) => {
   if (columns.length === 0) {
     return (
       <div>
-        <button onClick={addColumn}>Add Column</button>
-        <button onClick={addRow}>Add Row</button>
+        <button onClick={addColumn}>{t('add_column')}</button>
+        <button onClick={addRow}>{t('add_row')}</button>
       </div>
     );
   }
@@ -122,10 +124,10 @@ const EditableTable = ({ data, onUpdate, seriesColors, onColorChange }) => {
                 </div>
                 ))}
                 <div className="table-col">
-                    <div className="header-cell">Actions</div>
+                    <div className="header-cell">{t('actions')}</div>
                     {tableData.map((row, i) => (
                         <div key={i} className="table-cell">
-                        <button onClick={() => removeRow(i)}>Remove</button>
+                        <button onClick={() => removeRow(i)}>{t('remove')}</button>
                         </div>
                     ))}
                 </div>
@@ -137,14 +139,14 @@ const EditableTable = ({ data, onUpdate, seriesColors, onColorChange }) => {
           <path d="M8 3.5V12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M3.5 8H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-        Add Row
+        {t('add_row')}
       </button>
       <button onClick={addColumn} className="add-button">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 3.5V12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M3.5 8H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-        Add Column
+        {t('add_column')}
       </button>
       </div>    </div>
   );

@@ -8,5 +8,10 @@
   "y_axis_label": "Y-Axis Label:",
   "notes": "Notes:",
   "data": "Data",
-  "notes_display": "Notes"
+  "notes_display": "Notes",
+  "enter_new_column_name": "Enter new column name:",
+  "add_column": "Add Column",
+  "add_row": "Add Row",
+  "actions": "Actions",
+  "remove": "Remove"
 }

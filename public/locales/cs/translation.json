@@ -8,5 +8,10 @@
   "y_axis_label": "Popisek osy Y:",
   "notes": "Poznámky:",
   "data": "Data",
-  "notes_display": "Poznámky"
+  "notes_display": "Poznámky",
+  "enter_new_column_name": "Zadejte název nového sloupce:",
+  "add_column": "Přidat sloupec",
+  "add_row": "Přidat řádek",
+  "actions": "Akce",
+  "remove": "Odstranit"
 }
