@@ -1,0 +1,12 @@
+{
+  "csv_data_visualizer": "Vizualizér CSV dat",
+  "options": "Možnosti",
+  "show_connecting_line": "Zobrazit spojovací čáru",
+  "show_trend_line": "Zobrazit trendovou čáru",
+  "labels_and_notes": "Štítky a poznámky",
+  "x_axis_label": "Popisek osy X:",
+  "y_axis_label": "Popisek osy Y:",
+  "notes": "Poznámky:",
+  "data": "Data",
+  "notes_display": "Poznámky"
+}

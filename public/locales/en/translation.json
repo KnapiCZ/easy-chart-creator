@@ -1,0 +1,12 @@
+{
+  "csv_data_visualizer": "CSV Data Visualizer",
+  "options": "Options",
+  "show_connecting_line": "Show Connecting Line",
+  "show_trend_line": "Show Trend Line",
+  "labels_and_notes": "Labels & Notes",
+  "x_axis_label": "X-Axis Label:",
+  "y_axis_label": "Y-Axis Label:",
+  "notes": "Notes:",
+  "data": "Data",
+  "notes_display": "Notes"
+}

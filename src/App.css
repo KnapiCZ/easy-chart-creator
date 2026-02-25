@@ -1,38 +1,226 @@
+:root {
+  --background-color: #f4f7fA;
+  --text-color: #333;
+  --primary-color: #4a90e2;
+  --container-bg: #fff;
+  --border-color: #ddd;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.options-panel {
+  display: flex;
+  gap: 20px;
+  background-color: var(--container-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.content-panel {
+  display: flex;
+  gap: 20px;
+}
+
+.left-panel, .right-panel {
+  background-color: var(--container-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+
+.left-panel {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-panel {
+  width: 60%;
+}
+
+.controls {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.controls > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.controls h3 {
+  margin-bottom: 0;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.editable-table {
+  grid-column: 1 / -1;
+}
+
+.editable-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.editable-table th, .editable-table td {
+  border: 1px solid var(--border-color);
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.editable-table th {
+  background-color: #f4f7fa;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.editable-table th select {
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.editable-table .remove-col {
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.editable-table button, button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.editable-table button:hover, button:hover {
+  background-color: #357abd;
+}
+
+.toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.labels, .notes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.labels label, .notes label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.labels input, .notes textarea {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.notes-display {
+  margin-top: 20px;
+  text-align: left;
+  background-color: #f4f7fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.graph-container {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdfdfd;
+}
+
+.trend-equation {
+  margin-top: 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* Toggle Switch Styles */
+.toggles label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.toggles input[type="checkbox"] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ccc;
+  outline: none;
+  border-radius: 20px;
+  transition: .2s;
+}
+
+.toggles input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  background: white;
+  transition: .2s;
+}
+
+.toggles input:checked[type="checkbox"] {
+  background: var(--primary-color);
+}
+
+.toggles input:checked[type="checkbox"]::before {
+  transform: translateX(20px);
 }

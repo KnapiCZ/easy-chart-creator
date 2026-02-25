@@ -1,0 +1,37 @@
+.color-picker {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .selected-color {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  
+  .color-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    width: 100px;
+  }
+  
+  .color-option {
+    cursor: pointer;
+    padding: 5px;
+  }
+  
